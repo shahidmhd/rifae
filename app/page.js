@@ -2,6 +2,8 @@ import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import ProfileSection from '@/components/ProfileSection'
 import ReelGrid from '@/components/ReelGrid'
+import ServicesSection from '@/components/ServicesSection'
+import ContactSection from '@/components/ContactSection'
 import reelsData from '@/data/reels.json'
 
 /* Three.js must be client-only — no SSR */
@@ -24,6 +26,19 @@ export default function Home() {
       <Hero3D />
       <ProfileSection />
       <ReelGrid reels={reelsData} />
+
+      {/* Divider */}
+      <div className="max-w-5xl mx-auto px-5">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+      </div>
+
+      <ServicesSection />
+
+      <div className="max-w-5xl mx-auto px-5">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+      </div>
+
+      <ContactSection />
 
       {/* Footer */}
       <footer className="mt-20 py-10 border-t border-white/[0.04]">

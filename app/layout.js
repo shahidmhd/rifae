@@ -18,6 +18,11 @@ export const metadata = {
   title: 'muhammed__rifaee | Movie Review Reels',
   description: 'Cinematic movie reviews in 60 seconds. Every story worth watching.',
   keywords: ['movie reviews', 'reels', 'cinema', 'film', 'instagram'],
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
   openGraph: {
     title: 'muhammed__rifaee | Movie Review Reels',
     description: 'Cinematic movie reviews in 60 seconds.',
@@ -28,6 +33,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${cinzel.variable}`}>
+      <head>
+        <meta name="theme-color" content="#0a0a0f" />
+      </head>
       <body className={`${inter.className} bg-[#0a0a0f] text-white antialiased`}>
         {children}
       </body>
