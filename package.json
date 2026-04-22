@@ -1,0 +1,26 @@
+{
+  "name": "rifae-movies",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.2.29",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "framer-motion": "^11.3.8",
+    "@react-three/fiber": "^8.17.5",
+    "@react-three/drei": "^9.108.4",
+    "three": "^0.167.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.7",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.29"
+  }
+}

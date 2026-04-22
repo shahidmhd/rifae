@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "title": "Oppenheimer",
+    "year": "2023",
+    "rating": "8.9",
+    "reelLink": "https://www.instagram.com/p/DXMtQNngRQk/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Drama · History",
+    "accent": "#e67e22"
+  },
+  {
+    "id": "2",
+    "title": "Interstellar",
+    "year": "2014",
+    "rating": "8.6",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Sci-Fi · Adventure",
+    "accent": "#3498db"
+  },
+  {
+    "id": "3",
+    "title": "Inception",
+    "year": "2010",
+    "rating": "8.8",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Action · Sci-Fi",
+    "accent": "#9b59b6"
+  },
+  {
+    "id": "4",
+    "title": "The Dark Knight",
+    "year": "2008",
+    "rating": "9.0",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Action · Crime",
+    "accent": "#1abc9c"
+  },
+  {
+    "id": "5",
+    "title": "Dune: Part Two",
+    "year": "2024",
+    "rating": "8.6",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Sci-Fi · Adventure",
+    "accent": "#d4a017"
+  },
+  {
+    "id": "6",
+    "title": "The Shawshank Redemption",
+    "year": "1994",
+    "rating": "9.3",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Drama",
+    "accent": "#e74c3c"
+  },
+  {
+    "id": "7",
+    "title": "Parasite",
+    "year": "2019",
+    "rating": "8.5",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Thriller · Drama",
+    "accent": "#2ecc71"
+  },
+  {
+    "id": "8",
+    "title": "Poor Things",
+    "year": "2023",
+    "rating": "8.0",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Comedy · Fantasy",
+    "accent": "#e84393"
+  },
+  {
+    "id": "9",
+    "title": "The Godfather",
+    "year": "1972",
+    "rating": "9.2",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Crime · Drama",
+    "accent": "#c0392b"
+  },
+  {
+    "id": "10",
+    "title": "Mad Max: Fury Road",
+    "year": "2015",
+    "rating": "8.1",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Action · Adventure",
+    "accent": "#f39c12"
+  },
+  {
+    "id": "11",
+    "title": "Everything Everywhere All at Once",
+    "year": "2022",
+    "rating": "7.8",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Sci-Fi · Comedy",
+    "accent": "#8e44ad"
+  },
+  {
+    "id": "12",
+    "title": "Killers of the Flower Moon",
+    "year": "2023",
+    "rating": "7.6",
+    "reelLink": "https://www.instagram.com/muhammed__rifaee/",
+    "thumbnail": "https://i.pinimg.com/736x/b3/58/6b/b3586b4aacce33ca0d95d1d859a2d755.jpg",
+    "genre": "Crime · Drama",
+    "accent": "#16a085"
+  }
+]

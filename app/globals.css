@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cinema-black: #0a0a0f;
+  --cinema-dark: #111118;
+  --cinema-card: #16161f;
+  --cinema-border: #1e1e2e;
+  --red: #e50914;
+  --gold: #f5c518;
+  --glow-blue: #4a9eff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cinema-black);
+  color: #fff;
+  overflow-x: hidden;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--cinema-black); }
+::-webkit-scrollbar-thumb { background: #e50914; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #ff2030; }
+
+/* Film grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.028;
+  animation: grain 0.6s steps(1) infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+@keyframes grain {
+  0%   { transform: translate(0px, 0px); }
+  10%  { transform: translate(-2%, -3%); }
+  20%  { transform: translate(3%, 1%); }
+  30%  { transform: translate(-1%, 4%); }
+  40%  { transform: translate(2%, -2%); }
+  50%  { transform: translate(-3%, 2%); }
+  60%  { transform: translate(1%, -1%); }
+  70%  { transform: translate(-2%, 3%); }
+  80%  { transform: translate(3%, -3%); }
+  90%  { transform: translate(-1%, 1%); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/* Selection */
+::selection {
+  background: rgba(229, 9, 20, 0.35);
+  color: #fff;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-red {
+  background: rgba(229, 9, 20, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 9, 20, 0.2);
+}
+
+/* Glow effects */
+.glow-red {
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.4), 0 0 60px rgba(229, 9, 20, 0.15);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(245, 197, 24, 0.4), 0 0 60px rgba(245, 197, 24, 0.1);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 30px rgba(229, 9, 20, 0.6), 0 0 80px rgba(229, 9, 20, 0.2);
+}
+
+/* Marquee track */
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: marquee 35s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Card hover shimmer */
+.shimmer-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.04) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-position: -200% 0;
+  transition: background-position 0.7s ease;
+  pointer-events: none;
+}
+.shimmer-hover:hover::before {
+  background-position: 200% 0;
+}
