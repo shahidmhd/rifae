@@ -18,11 +18,6 @@ export const metadata = {
   title: 'muhammed__rifaee | Movie Review Reels',
   description: 'Cinematic movie reviews in 60 seconds. Every story worth watching.',
   keywords: ['movie reviews', 'reels', 'cinema', 'film', 'instagram'],
-  icons: {
-    icon: '/icon.svg',
-    shortcut: '/icon.svg',
-    apple: '/icon.svg',
-  },
   openGraph: {
     title: 'muhammed__rifaee | Movie Review Reels',
     description: 'Cinematic movie reviews in 60 seconds.',

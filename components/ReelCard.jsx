@@ -34,6 +34,8 @@ const InstagramIcon = () => (
   </svg>
 )
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 export default function ReelCard({ reel, index }) {
   const [hovered, setHovered] = useState(false)
   const palette = PALETTES[index % PALETTES.length]
@@ -71,7 +73,7 @@ export default function ReelCard({ reel, index }) {
       {/* Thumbnail image */}
       {reel.thumbnail && (
         <img
-          src={reel.thumbnail}
+          src={`${BASE}${reel.thumbnail}`}
           alt={reel.title}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
