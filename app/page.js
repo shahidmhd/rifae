@@ -6,7 +6,7 @@ import ServicesSection from '@/components/ServicesSection'
 import ContactSection from '@/components/ContactSection'
 import reelsData from '@/data/reels.json'
 
-/* Three.js must be client-only — no SSR */
+/* Client-only components */
 const Hero3D = dynamic(() => import('@/components/Hero3D'), {
   ssr: false,
   loading: () => (
@@ -19,26 +19,31 @@ const Hero3D = dynamic(() => import('@/components/Hero3D'), {
   ),
 })
 
+const ScrollProgress = dynamic(() => import('@/components/ScrollProgress'), { ssr: false })
+const BackToTop      = dynamic(() => import('@/components/BackToTop'),      { ssr: false })
+
+/* Section divider */
+function Divider() {
+  return (
+    <div className="max-w-5xl mx-auto px-5">
+      <div className="h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <main className="bg-[#0a0a0f] min-h-screen">
+      <ScrollProgress />
       <Navbar />
       <Hero3D />
       <ProfileSection />
       <ReelGrid reels={reelsData} />
-
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-5">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
-      </div>
-
+      <Divider />
       <ServicesSection />
-
-      <div className="max-w-5xl mx-auto px-5">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
-      </div>
-
+      <Divider />
       <ContactSection />
+      <BackToTop />
 
       {/* Footer */}
       <footer className="mt-20 py-10 border-t border-white/[0.04]">
@@ -49,16 +54,14 @@ export default function Home() {
             </div>
             <span
               className="text-gray-500 text-sm"
-              style={{ fontFamily: "var(--font-cinzel), Cinzel, serif" }}
+              style={{ fontFamily: 'var(--font-cinzel), Cinzel, serif' }}
             >
               muhammed__rifaee
             </span>
           </div>
-
           <p className="text-gray-700 text-xs text-center">
             © {new Date().getFullYear()} · Movie Review Reels · All rights reserved
           </p>
-
           <a
             href="https://www.instagram.com/muhammed__rifaee/"
             target="_blank"

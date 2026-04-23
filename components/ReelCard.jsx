@@ -45,15 +45,20 @@ export default function ReelCard({ reel, index }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Watch ${reel.title} reel on Instagram`}
-      initial={{ opacity: 0, y: 24, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.55, delay: (index % 6) * 0.07, ease: [0.25, 0.46, 0.45, 0.94] }}
-      whileHover={{ y: -6, scale: 1.025 }}
+      initial={{ opacity: 0, y: 50, scale: 0.88, rotateY: 12 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
+      viewport={{ once: true, margin: '-30px' }}
+      transition={{
+        duration: 0.65,
+        delay: (index % 6) * 0.09,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        rotateY: { duration: 0.8, ease: 'easeOut' },
+      }}
+      whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.25 } }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
       className="relative block rounded-2xl overflow-hidden cursor-pointer group shimmer-hover"
-      style={{ aspectRatio: '9 / 16' }}
+      style={{ aspectRatio: '9 / 16', perspective: '800px' }}
     >
       {/* ── Background gradient ──────────────────────────────────── */}
       <div

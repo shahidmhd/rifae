@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { SplitText } from './ScrollReveal'
 
 const SERVICES = [
   {
@@ -56,17 +57,24 @@ const SERVICES = [
 function ServiceCard({ service, index }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-      whileHover={{ y: -8, transition: { duration: 0.25 } }}
-      className="relative group rounded-2xl p-6 cursor-default overflow-hidden"
+      initial={{ opacity: 0, y: 60, rotateX: 25, scale: 0.9 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+      viewport={{ once: true, margin: '-30px' }}
+      transition={{
+        duration: 0.7,
+        delay: index * 0.1,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        rotateX: { duration: 0.8 },
+      }}
+      whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.25, ease: 'easeOut' } }}
       style={{
+        perspective: '1000px',
+        transformStyle: 'preserve-3d',
         background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%)',
         border: '1px solid rgba(255,255,255,0.07)',
         backdropFilter: 'blur(8px)',
       }}
+      className="relative group rounded-2xl p-6 cursor-default overflow-hidden"
     >
       {/* Top accent bar */}
       <div
@@ -155,7 +163,7 @@ export default function ServicesSection() {
             className="text-3xl md:text-4xl font-black text-white mb-3"
             style={{ fontFamily: 'var(--font-cinzel), Cinzel, serif' }}
           >
-            Services
+            <SplitText text="Services" delay={0.1} charDelay={0.05} />
           </h2>
           <p className="text-gray-500 text-sm max-w-sm mx-auto">
             From code to camera — a multidisciplinary creator at your service.

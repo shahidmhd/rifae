@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import ReelCard from './ReelCard'
+import { SplitText } from './ScrollReveal'
 
 /* Scrolling title ticker */
 function Marquee({ items }) {
@@ -30,26 +31,38 @@ export default function ReelGrid({ reels }) {
       <Marquee items={reels} />
 
       {/* Section header */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex items-center justify-between mb-6"
-      >
-        <div className="flex items-center gap-3">
-          <div className="w-0.5 h-5 rounded-full bg-red-500" />
+      <div className="flex items-center justify-between mb-6">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="flex items-center gap-3"
+        >
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="w-0.5 h-5 rounded-full bg-red-500 origin-top"
+          />
           <h2
-            className="text-lg font-bold text-white tracking-wide"
-            style={{ fontFamily: "var(--font-cinzel), Cinzel, serif" }}
+            className="text-lg font-bold text-white tracking-wide overflow-hidden"
+            style={{ fontFamily: 'var(--font-cinzel), Cinzel, serif' }}
           >
-            Movie Reels
+            <SplitText text="Movie Reels" delay={0.1} charDelay={0.04} />
           </h2>
-        </div>
-        <span className="text-gray-600 text-xs uppercase tracking-widest">
+        </motion.div>
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-gray-600 text-xs uppercase tracking-widest"
+        >
           {reels.length} reviews
-        </span>
-      </motion.div>
+        </motion.span>
+      </div>
 
       {/* Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">

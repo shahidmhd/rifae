@@ -3,7 +3,7 @@
 import { useRef, Suspense, useEffect, useState, useCallback } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, Stars, Preload } from '@react-three/drei'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 
 /* ─── Module-level mouse state (shared between React and Three.js) ─────────── */
 const mouse = { x: 0, y: 0, targetX: 0, targetY: 0 }
@@ -148,8 +148,16 @@ function FilmStrip({ side }) {
   )
 }
 
-/* ─── Hero text ──────────────────────────────────────────────────────────── */
+/* ─── Hero text (scroll-driven parallax) ────────────────────────────────── */
 function HeroContent() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const rawY = useTransform(scrollYProgress, [0, 1], [0, -120])
+  const rawOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0])
+  const rawScale = useTransform(scrollYProgress, [0, 0.45], [1, 0.92])
+  const y = useSpring(rawY, { stiffness: 80, damping: 20 })
+  const opacity = useSpring(rawOpacity, { stiffness: 80, damping: 20 })
+  const scale = useSpring(rawScale, { stiffness: 80, damping: 20 })
   const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.16 } } }
   const item = {
     hidden:  { opacity: 0, y: 32 },
@@ -158,9 +166,11 @@ function HeroContent() {
 
   return (
     <motion.div
+      ref={ref}
       variants={stagger}
       initial="hidden"
       animate="visible"
+      style={{ y, opacity, scale }}
       className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center"
     >
       {/* "NOW PLAYING" badge */}

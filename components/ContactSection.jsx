@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { SplitText } from './ScrollReveal'
 
 const CONTACT_LINKS = [
   {
@@ -143,7 +144,7 @@ export default function ContactSection() {
             className="text-3xl md:text-4xl font-black text-white mb-3"
             style={{ fontFamily: 'var(--font-cinzel), Cinzel, serif' }}
           >
-            Get in Touch
+            <SplitText text="Get in Touch" delay={0.15} charDelay={0.04} />
           </h2>
           <p className="text-gray-500 text-sm max-w-sm mx-auto">
             Got a project in mind? Let&apos;s build something great together.
@@ -160,10 +161,15 @@ export default function ContactSection() {
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="lg:col-span-2 flex flex-col gap-3"
           >
-            {CONTACT_LINKS.map(({ icon, label, value, href, accent }) => (
-              <div
+            {CONTACT_LINKS.map(({ icon, label, value, href, accent }, i) => (
+              <motion.div
                 key={label}
-                className="group flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                whileHover={{ x: 4, transition: { duration: 0.2 } }}
+                className="group flex items-center gap-4 p-4 rounded-xl transition-all duration-300 cursor-default"
                 style={{
                   background: 'rgba(255,255,255,0.03)',
                   border: '1px solid rgba(255,255,255,0.06)',
@@ -191,7 +197,7 @@ export default function ContactSection() {
                     <span className="text-gray-300 text-sm font-medium">{value}</span>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
 
             {/* Availability badge */}
