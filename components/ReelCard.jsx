@@ -1,8 +1,8 @@
 'use client'
 
+/* eslint-disable @next/next/no-img-element */
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 /* Color palettes per index for gradient poster backgrounds */
 const PALETTES = [
@@ -70,12 +70,11 @@ export default function ReelCard({ reel, index }) {
 
       {/* Thumbnail image */}
       {reel.thumbnail && (
-        <Image
+        <img
           src={reel.thumbnail}
           alt={reel.title}
-          fill
-          sizes="(max-width: 768px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       )}
 
